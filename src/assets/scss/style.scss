@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Permanent+Marker&display=swap');
+@import "variables.scss";
+@import "mixins.scss";
+
+* {
+  box-sizing: border-box;
+  transition: all 0.35s ease;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+::moz-selection {
+  color: white;
+  background-color: #00acc1;
+}
+::selection {
+  color: white;
+  background-color: #00acc1;
+}
+
+#app {
+  font-family: 'Montserrat', sans-serif;
+  background-color: $softGray;
+  color: $dark;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2 {
+  font-family: 'Permanent Marker', sans-serif;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.permanetMarker {
+  font-family: 'Permanent Marker', sans-serif;
+  color: red;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+.bg-red {
+  background-color: $red;
+}
+.bg-yellow {
+  background-color: $yellow;
+}
+.bg-purple {
+  background-color: $purple;
+}
+.bg-green {
+  background-color: $green;
+}
+
+.mark-b {
+  background-color: $blue;
+  padding: 0.2rem;
+  color: $white;
+}
+.mark-p {
+  background-color: $purple;
+  padding: 0.2rem;
+  color: $white;
+}
+.mark-r {
+  background-color: $red;
+  padding: 0.2rem;
+  color: $white;
+}
+.mark-y {
+  background-color: $yellow;
+  padding: 0.2rem;
+  color: $white;
+}
+
+.underline-blue {
+  @include underline-permanent($blue);
+}
+.underline-purple {
+  @include underline-permanent($purple);
+}
+.underline-red {
+  @include underline-permanent($red);
+}
+.underline-yellow {
+  @include underline-permanent($yellow);
+}
+
+.underline-blue-sm {
+  @include underline-permanent($blue, $height: 2px);
+}
+.underline-purple-sm {
+  @include underline-permanent($purple, $height: 2px);
+}
+.underline-red-sm {
+  @include underline-permanent($red, $height: 2px);
+}
+.underline-yellow-sm {
+  @include underline-permanent($yellow, $height: 2px);
+}
+
+.fade-in {
+  animation: section-fade-in 0.35s ease;
+}
+
+@keyframes section-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

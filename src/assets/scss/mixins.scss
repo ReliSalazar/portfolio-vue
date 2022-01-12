@@ -1,0 +1,58 @@
+@import "variables.scss";
+
+@mixin button($theme, $bg: transparent, $color: inherit) {
+  @include hard-boxshadow($theme, 3px);
+  background-color: $bg;
+  color: $color;
+  padding: 0.5rem 3rem;
+  text-decoration: none;
+}
+
+@mixin hard-boxshadow($color, $normal: 5px, $hover: 8px) {
+  border: 1px solid $color;
+  box-shadow: $normal $normal 0 0 $color;
+
+  &:hover {
+  box-shadow: $hover $hover 0 0 $color;
+  }
+}
+
+@mixin underline-permanent($firstColor, $hoverColor: $firstColor, $height: 4px) {
+  position: relative;
+
+  &:after {
+    content: "";
+    width: 100%;
+    height: $height;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    margin: 0;
+    background-color: $firstColor;
+    transition: all 0.35s ease;
+  }
+
+  &:hover::after {
+    background-color: $hoverColor;
+  }
+}
+
+@mixin underline($color, $height: 4px) {
+  position: relative;
+
+  &:after {
+    content: "";
+    width: 0;
+    height: $height;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    margin: 0;
+    transition: all 0.35s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+    background-color: $color;
+  }
+}
